@@ -26,3 +26,30 @@ for i in range(0, m):
 
 print(result)
 
+# 위의 알고리즘으로는 10,000이하의 수는 계산 가능 하지만 수가 많아지만 시간 초과의 가능성이 있다
+# 그러므로 가장 먼저 반복되는 수열에 대해 파악해야 한다
+# 가장 큰 수와 두번째로 큰 수가 더해지는 특정한 수열 형태로 일정하게 반복되기 때문에
+# 위의 예시에서는 {6, 6, 6, 5}가 반복된다
+# 반복되는 수열의 길이는 k + 1
+# 따라서 m을 (k + 1)로 나눈 몫이 수열이 반복되는 횟수가 된다
+# 여기에 k를 곱해주면 가장 큰 수가 등장하는 횟수가 된다
+# 이때 m이 (k + 1)로 나누어떨어지지 않은 경우도 생각해야 한다 - m % (k + 1)
+##### 답안 예시
+# n, m, k를 공백으로 구분하여 입력받기
+n, m, k = map(int, input().split())
+# n개의 수를 공백으로 구분하여 입력받기
+data = list(map(int, input().split()))
+
+data.sort()
+firstValue = data[n - 1]
+secondValue = data[n - 2]
+
+# 가장 큰 수가 더해지는 횟수
+count = int(m / (k + 1)) * k
+count += m % (k + 1)
+
+result = 0
+result += count * firstValue
+result += (m - count) * secondValue
+
+print(result)
