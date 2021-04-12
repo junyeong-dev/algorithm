@@ -25,3 +25,11 @@ for i in range(n):
         result = minValue
 
 print(result)
+
+# 한줄 씩 입력받으면서 확인
+for i in range(n):
+    data = list(map(int, input().split()))
+    minValue = min(data)
+    result = max(result, minValue)
+
+print(result)
