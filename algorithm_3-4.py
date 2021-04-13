@@ -22,3 +22,21 @@ while True:
         break
 
 print(result)
+
+
+# 반복 횟수를 좀 더 줄일수 있는 방법
+n, k = map(int, input().split())
+result = 0
+
+while True:
+    # n이 k의 배수가 되도록 한 번에 빼는 방식
+    target = (n//k) * k
+    result += (n-target)
+    n = target
+    if n < k:
+        break
+    result += 1
+    n //= k
+
+result += (n-1)
+print(result)
