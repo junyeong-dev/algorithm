@@ -1,5 +1,10 @@
 from collections import deque
 
+# BSF : Breadth First Search
+# 너비 우선 탐색이라고도 부르며, 가까운 노드부터 탐색하는 알고리즘
+# DFS는 최대한 멀리 있는 노드를 우선으로 탐색하는 방식으로 동작하는데
+# BFS는 그 반대다.
+
 # BFS는 큐 자료구조를 이용하며 구체적인 동작 과정은 다음과 같다.
 # 1. 탐색 시작 노드를 큐에 삽입하고 방문 처리를 한다.
 # 2. 큐에서 노드를 꺼내 해당 노드의 인접 노드 중에서 방문하지 않은 노드를
@@ -41,3 +46,7 @@ visited = [False] * 9
 
 # 정의된 BFS 함수 호출
 bfs(graph, 1, visited)
+
+# DFS와 BFS
+# 동작 원리 DFS: 스택, BFS : 큐
+# 구현 방법 DFS: 재귀 함수 이용 BFS: 큐 자료구조 이용
