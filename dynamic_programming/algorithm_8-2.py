@@ -29,7 +29,7 @@ while True:
         target += 1
         count += 1
 
-print(count)
+# print(count)
 
 # 앞서 계산된 결과를 저장하기 위한 DP 테이블 초기화
 d = [0] * 30001
@@ -49,3 +49,4 @@ for i in range(2, x + 1):
         d[i] = min(d[i], d[i // 5] + 1)
 
 print(d[x])
+# print(d)
